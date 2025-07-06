@@ -57,7 +57,6 @@ const HEADER = `
 <a href="/">Home</a>
 <a href="/examples/index.html">Examples</a>
 <a href="/installation/index.html">Installation</a>
-<a href="https://github.com/Mathapedia/LaTeX2JS/tree/main/examples">Github Examples</a>
 
 <div class="centered">
   <h1>LaTeX2JS Examples</h1>
