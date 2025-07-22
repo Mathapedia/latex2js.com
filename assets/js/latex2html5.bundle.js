@@ -1469,52 +1469,16 @@ const psgraph = {
                 });
             }
         });
-        // Throttle mechanism for 60fps (16.67ms between frames)
-        let lastEventTime = 0;
-        let pendingEvent = null;
-        let animationFrameId = null;
-        const FRAME_DURATION = 1000 / 60; // 16.67ms for 60fps
-        // Process the pending event
-        function processPendingEvent() {
-            if (pendingEvent) {
-                const currentTime = Date.now();
-                const timeSinceLastEvent = currentTime - lastEventTime;
-                if (timeSinceLastEvent >= FRAME_DURATION) {
-                    userEvent(pendingEvent);
-                    lastEventTime = currentTime;
-                    pendingEvent = null;
-                    animationFrameId = null;
-                }
-                else {
-                    // Schedule for next frame
-                    animationFrameId = requestAnimationFrame(processPendingEvent);
-                }
-            }
-        }
-        // Throttled event handler
-        function throttledUserEvent(coords) {
-            pendingEvent = coords;
-            const currentTime = Date.now();
-            const timeSinceLastEvent = currentTime - lastEventTime;
-            if (timeSinceLastEvent >= FRAME_DURATION) {
-                // Process immediately if enough time has passed
-                userEvent(coords);
-                lastEventTime = currentTime;
-                pendingEvent = null;
-            }
-            else if (!animationFrameId) {
-                // Schedule processing for the next available frame
-                animationFrameId = requestAnimationFrame(processPendingEvent);
-            }
-        }
         svg.on('touchmove', function (event) {
             event.preventDefault();
-            var touchcoords = event.touches ? event.touches[0] : [0, 0];
-            throttledUserEvent(touchcoords);
+            var touch = event.touches ? event.touches[0] : null;
+            var rect = event.target.getBoundingClientRect();
+            var touchcoords = touch ? [touch.clientX - rect.left, touch.clientY - rect.top] : [0, 0];
+            userEvent(touchcoords);
         });
         svg.on('mousemove', function (event) {
             var coords = [event.offsetX || 0, event.offsetY || 0];
-            throttledUserEvent(coords);
+            userEvent(coords);
         });
         const plots = this.plot;
         function userEvent(coords) {
