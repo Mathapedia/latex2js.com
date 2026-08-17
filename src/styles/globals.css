@@ -3,15 +3,18 @@
 @tailwind utilities;
 
 @layer base {
+	/* Match the original site: Arbutus Slab (the Knuth-esque slab serif the old
+	   CSS applied to body and rendered LaTeX content), equations via MathJax. */
 	body {
-		@apply bg-white text-neutral-800 antialiased;
+		@apply bg-white font-serif text-neutral-800 antialiased;
 	}
-	h1,
-	h2,
-	h3,
-	h4 {
-		@apply font-serif;
-	}
+}
+
+/* The latex2js stylesheet references the Google Fonts family name; point those
+   selectors at the next/font self-hosted face so they actually resolve. */
+.math,
+span.rm {
+	font-family: var(--font-arbutus-slab), Georgia, serif;
 }
 
 /* Give rendered LaTeX blocks breathing room; the latex2js stylesheet handles
