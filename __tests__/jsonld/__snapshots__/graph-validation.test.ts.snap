@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`JSON-LD Graph Validation Graph Integrity should have consistent entity count 1`] = `
+{
+  "totalEntities": 22,
+}
+`;
+
+exports[`JSON-LD Graph Validation findMissingReferences should find missing references in the graph 1`] = `[]`;
+
+exports[`JSON-LD Graph Validation findNestedEntities should find nested entities in the graph 1`] = `[]`;
+
+exports[`JSON-LD Graph Validation findOrphans should find orphaned entities in the graph 1`] = `
+[
+  "software:latex2js-react",
+  "software:latex2js-vue",
+  "webpage:latex2js-example-block-diagram",
+  "webpage:latex2js-example-complex-plane",
+  "webpage:latex2js-example-custom-path",
+  "webpage:latex2js-example-derivative-story",
+  "webpage:latex2js-example-draggable-vector",
+  "webpage:latex2js-example-feedback-system",
+  "webpage:latex2js-example-function-plot",
+  "webpage:latex2js-example-geometric-series",
+  "webpage:latex2js-example-interactive-plot",
+  "webpage:latex2js-example-sampling-system",
+  "webpage:latex2js-example-shaded-integral",
+  "webpage:latex2js-example-two-variables",
+  "webpage:latex2js-example-unit-circle",
+  "webpage:latex2js-example-vector-functions",
+  "website:latex2js.com",
+]
+`;
