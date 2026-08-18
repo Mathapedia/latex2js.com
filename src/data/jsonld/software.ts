@@ -25,7 +25,7 @@ export default [
 	{
 		'@type': 'SoftwareSourceCode',
 		'@id': 'software:latex2js-react',
-		name: '@latex2js/react',
+		name: 'latex2react',
 		description: 'React bindings for LaTeX2JS: render interactive LaTeX and PSTricks diagrams with the <LaTeX /> component.',
 		url: 'https://latex2js.com/installation/react',
 		codeRepository: 'https://github.com/Mathapedia/LaTeX2JS',
@@ -34,12 +34,12 @@ export default [
 		isPartOf: {
 			'@id': 'software:latex2js',
 		},
-		sameAs: ['https://www.npmjs.com/package/@latex2js/react'],
+		sameAs: ['https://www.npmjs.com/package/latex2react'],
 	},
 	{
 		'@type': 'SoftwareSourceCode',
 		'@id': 'software:latex2js-vue',
-		name: '@latex2js/vue',
+		name: 'latex2vue',
 		description: 'Vue bindings for LaTeX2JS: render interactive LaTeX and PSTricks diagrams with the <latex> component.',
 		url: 'https://latex2js.com/installation/vue',
 		codeRepository: 'https://github.com/Mathapedia/LaTeX2JS',
@@ -48,7 +48,7 @@ export default [
 		isPartOf: {
 			'@id': 'software:latex2js',
 		},
-		sameAs: ['https://www.npmjs.com/package/@latex2js/vue'],
+		sameAs: ['https://www.npmjs.com/package/latex2vue'],
 	},
 	{
 		'@type': 'WebSite',

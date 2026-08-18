@@ -25,17 +25,17 @@ export const installGuides: InstallGuide[] = [
 		slug: 'react',
 		name: 'React',
 		title: 'LaTeX2JS for React',
-		pkg: '@latex2js/react',
+		pkg: 'latex2react',
 		image: '/images/react.png',
 		steps: [
 			{
 				text: 'Install the library:',
-				code: 'npm install @latex2js/react',
+				code: 'npm install latex2react',
 				language: 'bash',
 			},
 			{
 				text: 'Import the latex2js CSS file and the LaTeX React component:',
-				code: "import 'latex2js/latex2js.css';\nimport { LaTeX } from '@latex2js/react';",
+				code: "import 'latex2js/latex2js.css';\nimport { LaTeX } from 'latex2react';",
 				language: 'tsx',
 			},
 			{
@@ -60,27 +60,26 @@ export default function App() {
 		slug: 'vue',
 		name: 'Vue',
 		title: 'LaTeX2JS for Vue',
-		pkg: '@latex2js/vue',
+		pkg: 'latex2vue',
 		image: '/images/vue.png',
 		steps: [
 			{
 				text: 'Install the library:',
-				code: 'npm install @latex2js/vue',
+				code: 'npm install latex2vue',
 				language: 'bash',
 			},
 			{
-				text: 'Register the plugin. If you are using Nuxt, add a plugin in ~plugins/latex2js.js:',
-				code: "import Vue from 'vue';\nimport VueLaTeX2JS from '@latex2js/vue';\nVue.use(VueLaTeX2JS);",
+				text: 'Register the Vue 3 plugin (or import the latex component directly where you need it):',
+				code: "import { createApp } from 'vue';\nimport LaTeX2Vue from 'latex2vue';\nimport 'latex2js/latex2js.css';\nimport App from './App.vue';\n\nconst app = createApp(App);\napp.use(LaTeX2Vue);\napp.mount('#app');",
 				language: 'js',
 			},
 			{
-				text: 'Add the CSS and plugin in your nuxt.config.js:',
-				code: `css: [
-  'latex2js/latex2js.css',
-],
-plugins: [
-  { src: '~plugins/latex2js.js', ssr: false },
-],`,
+				text: 'If you are using Nuxt, register it as a client-side plugin in plugins/latex2vue.js instead:',
+				code: `import LaTeX2Vue from 'latex2vue';
+
+export default defineNuxtPlugin((nuxtApp) => {
+  nuxtApp.vueApp.use(LaTeX2Vue);
+});`,
 				language: 'js',
 			},
 			{

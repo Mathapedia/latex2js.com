@@ -48,12 +48,12 @@ export const pages: Record<string, PageSeo> = {
 	'/installation/react': {
 		title: 'React Installation - LaTeX2JS',
 		description:
-			'Use the @latex2js/react package to render interactive LaTeX and PSTricks diagrams in React applications.',
+			'Use the latex2react package to render interactive LaTeX and PSTricks diagrams in React applications.',
 	},
 	'/installation/vue': {
 		title: 'Vue Installation - LaTeX2JS',
 		description:
-			'Use the @latex2js/vue plugin to render interactive LaTeX and PSTricks diagrams in Vue and Nuxt applications.',
+			'Use the latex2vue plugin to render interactive LaTeX and PSTricks diagrams in Vue and Nuxt applications.',
 	},
 	'/installation/html5': {
 		title: 'HTML5 Installation - LaTeX2JS',

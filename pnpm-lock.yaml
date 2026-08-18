@@ -12,15 +12,15 @@ importers:
 
   .:
     dependencies:
-      '@latex2js/react':
-        specifier: ^3.1.1
-        version: 3.1.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       jsonldjs:
         specifier: ^0.1.2
         version: 0.1.2
       latex2js:
-        specifier: ^3.1.4
-        version: 3.1.4
+        specifier: 4.0.3
+        version: 4.0.3
+      latex2react:
+        specifier: 4.0.3
+        version: 4.0.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       next:
         specifier: 16.1.6
         version: 16.1.6(@babel/core@7.29.7)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -641,23 +641,17 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@latex2js/macros@3.0.10':
-    resolution: {integrity: sha512-YiJxsmDCmjKmO58nk28BGEZWMkuv2Rnyh7H7QIxmyuvOiPU7ZLbGNwVwjQsDDI0QvrELEm56I6R2c1x3d7ABpQ==}
+  '@latex2js/macros@3.0.13':
+    resolution: {integrity: sha512-iOc/wdsLPTEBK5thEgU4TAdEa+nQI8u00SBrb2hyPnqOkuoWFM6xTxWku6vx4zl/PG9qNe0TZBkX+QlxpKDPJQ==}
 
-  '@latex2js/pstricks@3.1.4':
-    resolution: {integrity: sha512-vvsoRuX/ScQfbSI2O24MCi8NSF2pk9hlPmMphCvHzZszNo4hQGCwPNsxXb7eEmYqLEvdOBi802l/IBcbayZ36w==}
+  '@latex2js/pstricks@4.0.3':
+    resolution: {integrity: sha512-HTQxQXYbS8fbpEgKIqX7gwHFZGhXv3nZS2IOGc1U3a/R45LYXa38am3Fornvs/C5OuwAx/nB6eOKoM7EJ18i1g==}
 
-  '@latex2js/react@3.1.1':
-    resolution: {integrity: sha512-mVuoYyfu9n3LTuWPxA7ts+UvMVkQNxUKm7Af4/jU7Ra2u5Jcm0qJ9Ag/DxHXQmPadREMXl6S0rmlDanwjPDjLA==}
-    peerDependencies:
-      react: '>=16.8.0'
-      react-dom: '>=16.8.0'
+  '@latex2js/settings@4.0.3':
+    resolution: {integrity: sha512-Ec1jMja/L/RkOHvAxO5O5lFo5xkskf1T8MGQRNSLIgrpzzDO0NTNzvyg65syj7ZMIGfkOXXfXhFr+kMBhE+jpQ==}
 
-  '@latex2js/settings@3.1.3':
-    resolution: {integrity: sha512-PtiSMODxE9IQdXMcXd1MVwfBDoEy5CXWq8Fun34bn81KNtNDgz95BnTsJ+V/Sm0BIBKEdH25VoFCV94xt9Q9yw==}
-
-  '@latex2js/utils@3.0.12':
-    resolution: {integrity: sha512-RS6zZlbyCP/2munbbIhAUjumQJ/QzBEGZs+1297+DyLxClwEPt2WN8uBiA5HiS5+EUcBnxeXbih8qAf34JI2Jw==}
+  '@latex2js/utils@4.0.3':
+    resolution: {integrity: sha512-OYN8yggBu+wbmG4qAHFoZyUX0ebBeaRVf7nnyCEjBWr5Sy5BZTn1RCji/itpaamQp7xCD4nOMoA+4O7Z3f/Rag==}
 
   '@next/env@16.1.6':
     resolution: {integrity: sha512-N1ySLuZjnAtN3kFnwhAwPvZah8RJxKasD7x1f8shFqhncnWZn4JMfg37diLNuoHsLAlrDfM3g4mawVdtAG8XLQ==}
@@ -1409,8 +1403,14 @@ packages:
     resolution: {integrity: sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==}
     engines: {node: '>=6'}
 
-  latex2js@3.1.4:
-    resolution: {integrity: sha512-e02mIA7Dd9gSIik5rWBH4APkRTgSGzfqp2je637JkshEL74lUriibdZqqDocS/k1TbNZwEQuWT/77Rb3zwmJfw==}
+  latex2js@4.0.3:
+    resolution: {integrity: sha512-uKQ6nfby5V8XmepibuL3LVgVbFHoKuQH2TeWiPAaL3GhskxohZWpIahNpQJ7G8h7CxhdIwkmqgrUmTNcdI1Isw==}
+
+  latex2react@4.0.3:
+    resolution: {integrity: sha512-9/HTJnm7AKk1P/z+Ekh5d0Ex2oeL3inT1J6IOlSbjAZzdTwbfzbVH6vOnRJd1uiS6//zwYBokZxGy26cWjS0qA==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
 
   leven@3.1.0:
     resolution: {integrity: sha512-qsda+H8jTaUaN/x5vzW2rzc+8Rw4TAQ/4KjB46IwK5VH+IlVeeeje/EoZRpiXvIqjFgK84QffqPztGI3VBLG1A==}
@@ -1447,13 +1447,13 @@ packages:
   makeerror@1.0.12:
     resolution: {integrity: sha512-JmqCvUhmt43madlpFzG4BQzG2Z3m6tvQDNKdClZnO3VbIudJYmxsT0FNJMeiB2+JTSlTQTSbU8QdesVmwJcmLg==}
 
-  mathjaxjs-react@3.1.1:
-    resolution: {integrity: sha512-hjaOUcwm5FLPFHvue3ryQLwBnSeJAfl3yKWbfToJ/83Ng2axmkuJiDJjiEVcaGb75ZcPRPxRIbHmWZnYn6OXKA==}
+  mathjaxjs-react@4.0.3:
+    resolution: {integrity: sha512-JP1ej9Rtj5NVCRXmVKnVJToSPZXWeaUAIuqZ4HU5AGH3449V6Uuzx3UX4dTyPpV7Cd8ctG00Bup6FnvMtpEAKQ==}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
 
-  mathjaxjs@3.0.10:
-    resolution: {integrity: sha512-o6niAAqJByu0J4VqwLek0IjU1noTBExUHz0nAAilU/xl7G8Qtw2m3EFmF/xs2+npIJeWc4MBug76icRsBlT+IQ==}
+  mathjaxjs@4.0.3:
+    resolution: {integrity: sha512-tP30RKXHCJtuSpYPAPO4gSxGIE7YP/S9S8EAtKX0+Cs4nngMrhT7rSjUPaUcB+bK80Ti/QNXOroy8YwjWv+GQA==}
 
   merge-stream@2.0.0:
     resolution: {integrity: sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==}
@@ -2564,29 +2564,18 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@latex2js/macros@3.0.10': {}
+  '@latex2js/macros@3.0.13': {}
 
-  '@latex2js/pstricks@3.1.4':
+  '@latex2js/pstricks@4.0.3':
     dependencies:
-      '@latex2js/settings': 3.1.3
-      '@latex2js/utils': 3.0.12
+      '@latex2js/settings': 4.0.3
+      '@latex2js/utils': 4.0.3
 
-  '@latex2js/react@3.1.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@latex2js/settings@4.0.3':
     dependencies:
-      '@latex2js/macros': 3.0.10
-      '@latex2js/pstricks': 3.1.4
-      '@latex2js/utils': 3.0.12
-      latex2js: 3.1.4
-      mathjaxjs: 3.0.10
-      mathjaxjs-react: 3.1.1(react@19.2.4)
-      react: 19.2.4
-      react-dom: 19.2.4(react@19.2.4)
+      '@latex2js/utils': 4.0.3
 
-  '@latex2js/settings@3.1.3':
-    dependencies:
-      '@latex2js/utils': 3.0.12
-
-  '@latex2js/utils@3.0.12': {}
+  '@latex2js/utils@4.0.3': {}
 
   '@next/env@16.1.6': {}
 
@@ -3517,11 +3506,22 @@ snapshots:
 
   kleur@3.0.3: {}
 
-  latex2js@3.1.4:
+  latex2js@4.0.3:
     dependencies:
-      '@latex2js/pstricks': 3.1.4
-      '@latex2js/settings': 3.1.3
-      '@latex2js/utils': 3.0.12
+      '@latex2js/pstricks': 4.0.3
+      '@latex2js/settings': 4.0.3
+      '@latex2js/utils': 4.0.3
+
+  latex2react@4.0.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
+    dependencies:
+      '@latex2js/macros': 3.0.13
+      '@latex2js/pstricks': 4.0.3
+      '@latex2js/utils': 4.0.3
+      latex2js: 4.0.3
+      mathjaxjs: 4.0.3
+      mathjaxjs-react: 4.0.3(react@19.2.4)
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
 
   leven@3.1.0: {}
 
@@ -3551,12 +3551,12 @@ snapshots:
     dependencies:
       tmpl: 1.0.5
 
-  mathjaxjs-react@3.1.1(react@19.2.4):
+  mathjaxjs-react@4.0.3(react@19.2.4):
     dependencies:
-      mathjaxjs: 3.0.10
+      mathjaxjs: 4.0.3
       react: 19.2.4
 
-  mathjaxjs@3.0.10: {}
+  mathjaxjs@4.0.3: {}
 
   merge-stream@2.0.0: {}
 
