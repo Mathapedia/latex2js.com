@@ -47,7 +47,7 @@ export function Layout({ children }: { children: ReactNode }) {
 						<a href='https://danlynch.com' target='_blank' rel='noreferrer' className='underline'>
 							Dan Lynch
 						</a>{' '}
-						© LaTeX2JS 2013–{new Date().getFullYear()}
+						© LaTeX2JS 2012–{new Date().getFullYear()}
 					</p>
 				</div>
 			</footer>

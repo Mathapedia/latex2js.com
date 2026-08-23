@@ -17,6 +17,7 @@ export default [
 			'@id': 'software:mathapedia',
 		},
 		softwareRequirements: [{ '@id': 'software:mathjax' }],
+		video: [{ '@id': 'video:latex2html5-proposal' }],
 		sameAs: [
 			'https://github.com/Mathapedia/LaTeX2JS',
 			'https://www.npmjs.com/package/latex2js',
