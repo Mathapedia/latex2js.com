@@ -4,9 +4,20 @@
 
 @layer base {
 	/* Match the original site: Arbutus Slab (the Knuth-esque slab serif the old
-	   CSS applied to body and rendered LaTeX content), equations via MathJax. */
+	   CSS applied to body and rendered LaTeX content), equations via MathJax.
+	   The family itself is applied on the _app wrapper, where the next/font
+	   variable is in scope. */
 	body {
-		@apply bg-white font-serif text-neutral-800 antialiased;
+		@apply bg-white text-neutral-800 antialiased;
+	}
+
+	/* Original-site headings: Arbutus Slab, bold (browser-synthesized — the
+	   face ships 400 only), rgb(51,51,51). */
+	h1,
+	h2,
+	h3,
+	h4 {
+		@apply font-bold text-[#333];
 	}
 }
 

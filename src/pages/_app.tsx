@@ -17,7 +17,7 @@ const arbutusSlab = Arbutus_Slab({
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
-		<div className={`${arbutusSlab.variable} contents`}>
+		<div className={`${arbutusSlab.variable} contents font-serif`}>
 			<NextHead>
 				<link rel='icon' type='image/png' href='/favicon.png' />
 			</NextHead>

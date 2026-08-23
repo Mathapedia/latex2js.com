@@ -159,11 +159,15 @@ export default function Home() {
 				</p>
 			</section>
 
-			<section className='mt-10 flex justify-center'>
+			<hr className='my-8 border-neutral-200' />
+
+			<section className='flex justify-center'>
 				<Image src={photo} alt='Interactive LaTeX2JS diagrams rendered on multiple devices' className='max-w-full' />
 			</section>
 
-			<section className='mx-auto mt-10 max-w-2xl text-center'>
+			<hr className='my-8 border-neutral-200' />
+
+			<section className='mx-auto max-w-2xl text-center'>
 				<p>
 					This project is the frontend-only version of the code that originated from{' '}
 					<a href={routes.external.mathapedia} target='_blank' rel='noreferrer' className='underline'>
@@ -174,7 +178,9 @@ export default function Home() {
 				<Latex content={lifeEquation} />
 			</section>
 
-			<section className='mt-10 text-center'>
+			<hr className='my-8 border-neutral-200' />
+
+			<section className='text-center'>
 				<p className='text-neutral-600'>Proud to support the best</p>
 				<div className='mt-4 flex items-center justify-center gap-6'>
 					{frameworks.map((framework) => (
@@ -185,7 +191,9 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section className='mx-auto mt-12 max-w-2xl space-y-8 text-center'>
+			<hr className='my-8 border-neutral-200' />
+
+			<section className='mx-auto max-w-2xl space-y-8 text-center'>
 				<div>
 					<h3 className='text-2xl'>Installation</h3>
 					<p className='mt-2'>
@@ -240,7 +248,7 @@ export default function Home() {
 				</div>
 			</section>
 
-			<hr className='my-12 border-neutral-200' />
+			<hr className='my-8 border-neutral-200' />
 
 			<section>
 				<Latex content={essay} />
