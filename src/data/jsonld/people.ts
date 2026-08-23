@@ -8,6 +8,7 @@ export default [
 			'https://github.com/pyramation',
 			'https://www.linkedin.com/in/dan-p-lynch/',
 			'https://x.com/danlynch',
+			'https://scholar.google.com/citations?user=1U4vfEUAAAAJ&hl=en',
 		],
 	},
 	{
