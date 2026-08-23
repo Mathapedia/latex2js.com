@@ -14,6 +14,7 @@ $$\frac{\delta}{\delta u} \int_{birth}^{death} f(life) du = \mbox{your life}$$
 `;
 
 const essay = String.raw`
+\definecolor{lightblue}{RGB}{173,216,230}
 \begin{pspicture}(0,-3)(8,3)
 \rput(0,0){$x(t)$}
 \rput(4,1.5){$f(t)$}
@@ -81,7 +82,7 @@ If you specify more arguments, you can create functions for the head and and tai
 \psframe(-2,-2)(2,2)
 \userline[linewidth=2pt,linecolor=green]{->}(0,0)(2,2){-x}{-y}
 \userline[linewidth=2pt,linecolor=red]{->}(0,0)(2,2){0}{y}
-\userline[linewidth=2pt,linecolor=purple]{->}(0,0)(2,2){-x}{cos(y)}
+\userline[linewidth=2pt,linecolor=violet]{->}(0,0)(2,2){-x}{cos(y)}
 \userline[linewidth=2pt,linecolor=lightblue]{->}(0,0)(2,2)(sin(x)}{-y}
 \end{pspicture}
 \end{center}
@@ -91,7 +92,7 @@ If you specify more arguments, you can create functions for the head and and tai
 \begin{verbatim}
 \userline[linewidth=2pt,linecolor=green]{->}(0,0)(2,2){-x}{-y}
 \userline[linewidth=2pt,linecolor=red]{->}(0,0)(2,2){0}{y}
-\userline[linewidth=2pt,linecolor=purple]{->}(0,0)(2,2){-x}{cos(y)}
+\userline[linewidth=2pt,linecolor=violet]{->}(0,0)(2,2){-x}{cos(y)}
 \userline[linewidth=2pt,linecolor=lightblue]{->}(0,0)(2,2)(sin(x)}{-y}
 \end{verbatim}
 
