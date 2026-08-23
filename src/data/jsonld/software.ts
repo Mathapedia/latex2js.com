@@ -16,6 +16,7 @@ export default [
 		isPartOf: {
 			'@id': 'software:mathapedia',
 		},
+		isBasedOn: [{ '@id': 'thesis:danlynch-digital-publishing' }],
 		softwareRequirements: [{ '@id': 'software:mathjax' }],
 		video: [{ '@id': 'video:latex2html5-proposal' }],
 		sameAs: [
