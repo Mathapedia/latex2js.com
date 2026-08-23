@@ -2,7 +2,7 @@
 
 exports[`JSON-LD Graph Validation Graph Integrity should have consistent entity count 1`] = `
 {
-  "totalEntities": 22,
+  "totalEntities": 21,
 }
 `;
 

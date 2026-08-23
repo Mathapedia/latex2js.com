@@ -11,7 +11,7 @@ export default [
 			'@id': 'software:latex2js',
 		},
 		publisher: {
-			'@id': 'org:constructive',
+			'@id': 'person:danlynch',
 		},
 	},
 ] satisfies WebSite[];
