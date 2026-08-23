@@ -51,7 +51,7 @@ export default [
 		sameAs: ['https://www.npmjs.com/package/latex2vue'],
 	},
 	{
-		'@type': 'WebSite',
+		'@type': 'WebApplication',
 		'@id': 'software:mathapedia',
 		name: 'Mathapedia',
 		url: 'https://mathapedia.com',
