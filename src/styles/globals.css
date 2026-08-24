@@ -28,6 +28,22 @@ span.rm {
 	font-family: var(--font-arbutus-slab), Georgia, serif;
 }
 
+/* The old site used the browser's default paragraph margin (16px top/bottom);
+   Tailwind preflight zeroes it, which cramped paragraphs and the pspicture
+   figures between them. */
+.math p {
+	margin: 16px 0;
+}
+
+/* latex2react ships verbatim as a gray code block; the old site rendered it as
+   plain white text. Override the inline style to match. */
+pre.verbatim {
+	background-color: transparent !important;
+	padding: 0 !important;
+	border-radius: 0 !important;
+	margin: 13px 0;
+}
+
 /* Give rendered LaTeX blocks breathing room; the latex2js stylesheet handles
    the pspicture internals. */
 .latex2js-content {
