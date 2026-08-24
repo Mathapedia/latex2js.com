@@ -93,6 +93,7 @@ export const seoConfig = {
 	twitter: {
 		handle: site.twitterHandle,
 		site: site.twitterHandle,
+		cardType: 'summary_large_image',
 	},
 };
 
