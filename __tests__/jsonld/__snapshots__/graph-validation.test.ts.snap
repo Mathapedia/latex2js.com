@@ -2,7 +2,7 @@
 
 exports[`JSON-LD Graph Validation Graph Integrity should have consistent entity count 1`] = `
 {
-  "totalEntities": 24,
+  "totalEntities": 25,
 }
 `;
 
@@ -28,6 +28,6 @@ exports[`JSON-LD Graph Validation findOrphans should find orphaned entities in t
   "webpage:latex2js-example-two-variables",
   "webpage:latex2js-example-unit-circle",
   "webpage:latex2js-example-vector-functions",
-  "website:latex2js.com",
+  "webpage:latex2js-sandbox",
 ]
 `;

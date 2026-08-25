@@ -1,6 +1,7 @@
 import { JsonLdGraph } from 'jsonldjs';
 
 import examples from './examples';
+import sandbox from './sandbox';
 import people from './people';
 import publications from './publications';
 import software from './software';
@@ -14,4 +15,5 @@ export const jsonldGraph: JsonLdGraph = [
 	...publications,
 	...videos,
 	...examples,
+	...sandbox,
 ];

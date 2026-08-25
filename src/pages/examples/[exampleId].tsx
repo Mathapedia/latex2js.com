@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { useState } from 'react';
 
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
@@ -18,6 +19,9 @@ interface ExamplePageProps {
 
 export default function ExamplePage({ example, source }: ExamplePageProps) {
 	const route = `/examples/${example.slug}` as const;
+	const [isEditing, setIsEditing] = useState(false);
+	const [editedSource, setEditedSource] = useState(source);
+	const [rendered, setRendered] = useState(source);
 
 	const jsonLdConfig = defaultJsonLdConfig
 		.clearSubgraph()
@@ -47,12 +51,56 @@ export default function ExamplePage({ example, source }: ExamplePageProps) {
 			)}
 
 			<div className='mt-10'>
-				<Latex content={source} />
+				<Latex key={rendered} content={rendered} />
 			</div>
 
 			<h2 className='mt-12 text-2xl'>Source</h2>
 			<div className='mt-4'>
-				<CodeBlock code={source.trim()} />
+				{isEditing ? (
+					<textarea
+						className='h-96 w-full rounded-md border border-neutral-300 bg-neutral-50 p-4 font-mono text-sm'
+						value={editedSource}
+						onChange={(event) => setEditedSource(event.target.value)}
+						spellCheck={false}
+					/>
+				) : (
+					<CodeBlock code={source.trim()} />
+				)}
+			</div>
+			<div className='mt-4 flex flex-wrap gap-3'>
+				{isEditing ? (
+					<>
+						<button
+							className='rounded-md bg-neutral-900 px-4 py-2 text-sm text-white hover:bg-neutral-700'
+							onClick={() => setRendered(editedSource)}
+						>
+							Render
+						</button>
+						<button
+							className='rounded-md border border-neutral-300 px-4 py-2 text-sm hover:border-neutral-500'
+							onClick={() => {
+								setEditedSource(source);
+								setRendered(source);
+								setIsEditing(false);
+							}}
+						>
+							Reset
+						</button>
+					</>
+				) : (
+					<button
+						className='rounded-md border border-neutral-300 px-4 py-2 text-sm hover:border-neutral-500'
+						onClick={() => setIsEditing(true)}
+					>
+						Edit source
+					</button>
+				)}
+				<a
+					href={routes.sandboxWithSource(editedSource)}
+					className='rounded-md border border-neutral-300 px-4 py-2 text-sm hover:border-neutral-500'
+				>
+					Open in sandbox
+				</a>
 			</div>
 		</>
 	);

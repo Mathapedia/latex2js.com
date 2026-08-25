@@ -29,6 +29,10 @@ const llmsTxt = `# ${site.name}
 
 LaTeX2JS renders LaTeX and PSTricks in the browser: pspicture environments, draggable vectors (userline), draggable variables (uservariable), sliders, and live plots (psplot), with equations typeset by MathJax. Source: https://github.com/Mathapedia/LaTeX2JS
 
+## Sandbox
+
+- [LaTeX Sandbox](${canonical}/sandbox): Edit and render LaTeX and PSTricks in the browser, or start from one of the interactive examples.
+
 ## Installation
 
 ${installGuides

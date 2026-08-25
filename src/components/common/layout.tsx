@@ -5,6 +5,7 @@ import { routes } from '@/routes';
 
 const navLinks = [
 	{ label: 'Home', href: routes.home },
+	{ label: 'Sandbox', href: routes.sandbox },
 	{ label: 'Examples', href: routes.examples.index },
 	{ label: 'Installation', href: routes.installation.index },
 ];
