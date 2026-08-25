@@ -1,0 +1,17 @@
+packages:
+  - '.'
+allowBuilds:
+  esbuild: true
+  sharp: true
+minimumReleaseAgeExclude:
+  - '@latex2js/macros@3.2.0'
+  - '@latex2js/pstricks@4.2.0'
+  - '@latex2js/settings@4.2.0'
+  - '@latex2js/utils@4.2.0'
+  - latex2js@4.5.0
+  - latex2react@4.4.2
+  - mathjaxjs-react@4.2.0
+  - mathjaxjs@4.2.0
+overrides:
+  '@types/react': 19.2.10
+  '@types/react-dom': 19.2.3

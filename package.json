@@ -1,15 +1,53 @@
 {
-  "name": "latex2js.com",
-  "version": "2.1.2",
-  "private": true,
-  "scripts": {
-    "copy": "rm -rf static && mkdir -p static && cp -r assets static/ && cp -r examples static/ && cp -r installation static/ && cp -r index.html static/",
-    "examples": "node bin/examples",
-    "upload": "AWS_PROFILE=pyramation aws s3 sync static/ s3://latex2js.com",
-    "deploy": "npm run copy && npm run upload",
-    "invalidate": "AWS_PROFILE=pyramation aws cloudfront create-invalidation --distribution-id E2IV32FSPB7S79 --paths \"/*\""
-  },
-  "devDependencies": {
-    "glob": "^7.1.2"
-  }
+	"name": "latex2js.com",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev --port 5007",
+		"build": "next build && pnpm run generate:llm-md && pnpm run seo",
+		"start": "next start",
+		"test": "jest",
+		"test:watch": "jest --watch",
+		"test:update": "jest --updateSnapshot",
+		"seo": "tsx src/seo/seo.ts",
+		"generate:llm-md": "tsx scripts/generate-llm-markdown.ts",
+		"deploy": "AWS_PROFILE=pyramation aws s3 sync out/ s3://latex2js.com --exclude \"*.md\" --exclude \"llms.txt\" && pnpm run deploy:md",
+		"deploy:md": "AWS_PROFILE=pyramation aws s3 cp out/ s3://latex2js.com --recursive --exclude \"*\" --include \"*.md\" --include \"llms.txt\" --content-type \"text/plain; charset=utf-8\"",
+		"deploy:all": "pnpm run build && pnpm run deploy && ./src/seo/prepare.sh && pnpm run invalidate",
+		"invalidate": "AWS_PROFILE=pyramation aws cloudfront create-invalidation --distribution-id E2IV32FSPB7S79 --paths \"/*\""
+	},
+	"engines": {
+		"node": ">=22",
+		"pnpm": ">=10"
+	},
+	"dependencies": {
+		"@codemirror/language": "6.12.4",
+		"@codemirror/lint": "6.9.7",
+		"@codemirror/legacy-modes": "6.5.3",
+		"@uiw/react-codemirror": "4.25.11",
+		"jsonldjs": "^0.1.2",
+		"latex2js": "4.5.0",
+		"latex2react": "4.4.2",
+		"next": "16.1.6",
+		"next-seo": "^6.8.0",
+		"react": "19.2.4",
+		"react-dom": "19.2.4"
+	},
+	"devDependencies": {
+		"@types/glob": "^8.1.0",
+		"@types/jest": "^29.5.14",
+		"@types/node": "^22.19.7",
+		"@types/react": "19.2.10",
+		"@types/react-dom": "19.2.3",
+		"autoprefixer": "^10.4.24",
+		"glob": "^11.1.0",
+		"jest": "^29.7.0",
+		"mkdirp": "^3.0.1",
+		"postcss": "^8.5.6",
+		"schema-dts": "^1.1.5",
+		"tailwindcss": "^3.4.19",
+		"ts-jest": "^29.4.6",
+		"tsx": "^4.21.0",
+		"typescript": "^5.9.3"
+	}
 }
