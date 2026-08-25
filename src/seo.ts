@@ -40,6 +40,11 @@ export const pages: Record<string, PageSeo> = {
 		description:
 			'Interactive PSTricks examples rendered live by LaTeX2JS: block diagrams, draggable vectors, slider-driven plots, and more — each with its LaTeX source.',
 	},
+	'/sandbox': {
+		title: 'LaTeX Sandbox - LaTeX2JS',
+		description:
+			'Edit and render LaTeX and PSTricks in the browser with LaTeX2JS, or start from one of the interactive examples.',
+	},
 	'/installation': {
 		title: 'Installation - LaTeX2JS',
 		description:

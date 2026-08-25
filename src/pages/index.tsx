@@ -230,9 +230,9 @@ export default function Home() {
 							example apps on GitHub
 						</a>
 						, or play in the{' '}
-						<a href={routes.external.sandbox} target='_blank' rel='noreferrer' className='underline'>
+						<Link href={routes.sandbox} className='underline'>
 							sandbox
-						</a>
+						</Link>
 						.
 					</p>
 				</div>
