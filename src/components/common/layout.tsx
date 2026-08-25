@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { ReactNode } from 'react';
 
 import { routes } from '@/routes';
@@ -11,6 +12,10 @@ const navLinks = [
 ];
 
 export function Layout({ children }: { children: ReactNode }) {
+	// The sandbox is a workspace rather than a page of prose, so let it fill
+	// the viewport for the editor and render pane.
+	const isWorkspace = useRouter().pathname === routes.sandbox;
+
 	return (
 		<div className='flex min-h-screen flex-col'>
 			<header className='border-b border-neutral-200'>
@@ -30,7 +35,15 @@ export function Layout({ children }: { children: ReactNode }) {
 					</div>
 				</nav>
 			</header>
-			<main className='mx-auto w-full max-w-4xl flex-1 px-4 py-10'>{children}</main>
+			<main
+				className={
+					isWorkspace
+						? 'mx-auto flex w-full max-w-7xl flex-1 flex-col px-4 py-6'
+						: 'mx-auto w-full max-w-4xl flex-1 px-4 py-10'
+				}
+			>
+				{children}
+			</main>
 			<footer className='border-t border-neutral-200'>
 				<div className='mx-auto max-w-4xl space-y-2 px-4 py-8 text-center text-sm text-neutral-500'>
 					<p>
