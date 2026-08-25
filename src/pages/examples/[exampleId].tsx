@@ -9,6 +9,7 @@ import { CodeBlock } from '@/components/code-block';
 import { Head } from '@/components/common/head';
 import { Latex } from '@/components/latex';
 import { TexEditor } from '@/components/tex-editor';
+import { useAutoRender } from '@/components/use-auto-render';
 import { defaultJsonLdConfig } from '@/config';
 import { examples, getExample, type ExampleMeta } from '@/data/examples';
 import { routes } from '@/routes';
@@ -22,7 +23,7 @@ export default function ExamplePage({ example, source }: ExamplePageProps) {
 	const route = `/examples/${example.slug}` as const;
 	const [isEditing, setIsEditing] = useState(false);
 	const [editedSource, setEditedSource] = useState(source);
-	const [rendered, setRendered] = useState(source);
+	const { rendered, diagnostics, renderNow } = useAutoRender(editedSource, source);
 
 	const jsonLdConfig = defaultJsonLdConfig
 		.clearSubgraph()
@@ -62,7 +63,8 @@ export default function ExamplePage({ example, source }: ExamplePageProps) {
 						<TexEditor
 							value={editedSource}
 							onChange={setEditedSource}
-							onSubmit={() => setRendered(editedSource)}
+							onSubmit={() => renderNow()}
+							diagnostics={diagnostics}
 						/>
 					</div>
 				) : (
@@ -74,7 +76,7 @@ export default function ExamplePage({ example, source }: ExamplePageProps) {
 					<>
 						<button
 							className='rounded-md bg-neutral-900 px-4 py-2 text-sm text-white hover:bg-neutral-700'
-							onClick={() => setRendered(editedSource)}
+							onClick={() => renderNow()}
 						>
 							Render
 						</button>
@@ -82,7 +84,7 @@ export default function ExamplePage({ example, source }: ExamplePageProps) {
 							className='rounded-md border border-neutral-300 px-4 py-2 text-sm hover:border-neutral-500'
 							onClick={() => {
 								setEditedSource(source);
-								setRendered(source);
+								renderNow(source);
 								setIsEditing(false);
 							}}
 						>

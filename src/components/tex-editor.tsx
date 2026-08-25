@@ -1,5 +1,7 @@
 import dynamic from 'next/dynamic';
 
+import type { TexDiagnostic } from './lint-tex';
+
 // CodeMirror (and @codemirror/view underneath it) reaches for the DOM as it
 // loads, so the whole editor — widget and language mode alike — is imported
 // only on the client. Every page using it is statically exported.
@@ -18,6 +20,7 @@ export interface TexEditorProps {
 	/** Fired on Cmd/Ctrl+Enter, so a render doesn't need a trip to the button. */
 	onSubmit?: () => void;
 	placeholder?: string;
+	diagnostics?: readonly TexDiagnostic[];
 }
 
 export function TexEditor(props: TexEditorProps) {
