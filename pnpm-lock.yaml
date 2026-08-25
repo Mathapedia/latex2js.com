@@ -31,8 +31,8 @@ importers:
         specifier: 4.5.0
         version: 4.5.0
       latex2react:
-        specifier: 4.4.2
-        version: 4.4.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 4.4.3
+        version: 4.4.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       next:
         specifier: 16.1.6
         version: 16.1.6(@babel/core@7.29.7(supports-color@8.1.1))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -1508,8 +1508,8 @@ packages:
   latex2js@4.5.0:
     resolution: {integrity: sha512-nhgpnbL3R+Zx6cL8i3dRZqGZz/LfDsIXCcjnzavsAOd6yfB2BXJyZgE5E/f75D+8RHigRDU7n5Ctew4TaRn1kw==}
 
-  latex2react@4.4.2:
-    resolution: {integrity: sha512-3kusYgkJk2n/iX4T7r9AvDg2IPQtzk2PkbvdNH4N6MYSjQUuwHnb/UCcyrauQkEzejNwNJ0tgqBjICCSsnpnVw==}
+  latex2react@4.4.3:
+    resolution: {integrity: sha512-vRVQVGS91dApenylCC2WDA/Xd/ATfgRVrdiZguR17dJ5nfQ8IvCOq9U85lhif/Hj/Rstlp7o2ObK1Dn3OD95wg==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -3728,7 +3728,7 @@ snapshots:
       '@latex2js/settings': 4.2.0
       '@latex2js/utils': 4.2.0
 
-  latex2react@4.4.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
+  latex2react@4.4.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
     dependencies:
       '@latex2js/macros': 3.2.0
       '@latex2js/pstricks': 4.2.0
