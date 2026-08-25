@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { Head } from '@/components/common/head';
 import { Latex } from '@/components/latex';
 import { TexEditor } from '@/components/tex-editor';
+import { useAutoRender } from '@/components/use-auto-render';
 import { defaultJsonLdConfig } from '@/config';
 import { examples } from '@/data/examples';
 import { routes } from '@/routes';
@@ -33,10 +34,8 @@ const placeholder = [
 export default function Sandbox({ exampleSources }: SandboxPageProps) {
 	const seo = getPageSeo(routes.sandbox);
 	const [tex, setTex] = useState('');
-	const [rendered, setRendered] = useState('');
 	const [editorOpen, setEditorOpen] = useState(true);
-
-	const render = () => setRendered(tex);
+	const { rendered, diagnostics, renderNow } = useAutoRender(tex);
 
 	useEffect(() => {
 		const prefix = '#tex=';
@@ -45,7 +44,7 @@ export default function Sandbox({ exampleSources }: SandboxPageProps) {
 		try {
 			const source = decodeURIComponent(window.location.hash.slice(prefix.length));
 			setTex(source);
-			setRendered(source);
+			renderNow(source);
 		} catch {
 			// Ignore malformed deep-link hashes and leave the editor empty.
 		}
@@ -55,7 +54,7 @@ export default function Sandbox({ exampleSources }: SandboxPageProps) {
 		const example = exampleSources.find((item) => item.slug === slug);
 		if (!example) return;
 		setTex(example.source);
-		setRendered(example.source);
+		renderNow(example.source);
 	};
 
 	return (
@@ -81,7 +80,7 @@ export default function Sandbox({ exampleSources }: SandboxPageProps) {
 					</button>
 					<button
 						className='rounded-md bg-neutral-900 px-3 py-1.5 text-white hover:bg-neutral-700'
-						onClick={render}
+						onClick={() => renderNow()}
 					>
 						Render
 					</button>
@@ -114,7 +113,13 @@ export default function Sandbox({ exampleSources }: SandboxPageProps) {
 			<div className='mt-4 grid min-h-0 flex-1 gap-4 lg:grid-cols-2'>
 				{editorOpen && (
 					<div className='min-h-[24rem] lg:min-h-0'>
-						<TexEditor value={tex} onChange={setTex} onSubmit={render} placeholder={placeholder} />
+						<TexEditor
+							value={tex}
+							onChange={setTex}
+							onSubmit={() => renderNow()}
+							placeholder={placeholder}
+							diagnostics={diagnostics}
+						/>
 					</div>
 				)}
 				<div
@@ -122,12 +127,17 @@ export default function Sandbox({ exampleSources }: SandboxPageProps) {
 						editorOpen ? '' : 'lg:col-span-2'
 					}`}
 				>
+					{diagnostics.some((diagnostic) => diagnostic.severity === 'error') && (
+						<p className='mb-4 rounded-md bg-amber-50 px-3 py-2 text-sm text-amber-900'>
+							The source has a syntax error; showing the last valid render.
+						</p>
+					)}
 					{rendered ? (
 						/* Remount on each render so LaTeX2JS reprocesses the new source. */
 						<Latex key={rendered} content={rendered} />
 					) : (
 						<p className='text-sm text-neutral-500'>
-							The render appears here — hit Render (or ⌘/Ctrl+Enter). Start from an{' '}
+							The preview appears here and updates as you type — start from an{' '}
 							<Link href={routes.examples.index} className='underline'>
 								example
 							</Link>{' '}
