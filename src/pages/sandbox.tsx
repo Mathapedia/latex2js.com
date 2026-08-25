@@ -2,6 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import { useEffect, useState } from 'react';
 
+import type { GetStaticProps } from 'next';
+
 import { Head } from '@/components/common/head';
 import { Latex } from '@/components/latex';
 import { defaultJsonLdConfig } from '@/config';
@@ -16,10 +18,10 @@ interface SandboxExample {
 }
 
 interface SandboxPageProps {
-	examples: SandboxExample[];
+	exampleSources: SandboxExample[];
 }
 
-export default function Sandbox({ examples }: SandboxPageProps) {
+export default function Sandbox({ exampleSources }: SandboxPageProps) {
 	const seo = getPageSeo(routes.sandbox);
 	const [tex, setTex] = useState('');
 	const [rendered, setRendered] = useState('');
@@ -38,7 +40,7 @@ export default function Sandbox({ examples }: SandboxPageProps) {
 	}, []);
 
 	const loadExample = (slug: string) => {
-		const example = examples.find((item) => item.slug === slug);
+		const example = exampleSources.find((item) => item.slug === slug);
 		if (!example) return;
 		setTex(example.source);
 		setRendered(example.source);
@@ -73,7 +75,7 @@ export default function Sandbox({ examples }: SandboxPageProps) {
 				<option value='' disabled>
 					Choose an example…
 				</option>
-				{examples.map((example) => (
+				{exampleSources.map((example) => (
 					<option key={example.slug} value={example.slug}>
 						{example.title}
 					</option>
@@ -104,14 +106,14 @@ export default function Sandbox({ examples }: SandboxPageProps) {
 	);
 }
 
-export function getStaticProps() {
+export const getStaticProps: GetStaticProps<SandboxPageProps> = () => {
 	return {
 		props: {
-			examples: examples.map((example) => ({
+			exampleSources: examples.map((example) => ({
 				slug: example.slug,
 				title: example.title,
 				source: fs.readFileSync(path.join(process.cwd(), 'content/examples', example.file), 'utf-8'),
 			})),
 		},
 	};
-}
+};
