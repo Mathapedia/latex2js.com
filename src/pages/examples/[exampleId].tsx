@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { CodeBlock } from '@/components/code-block';
 import { Head } from '@/components/common/head';
 import { Latex } from '@/components/latex';
+import { TexEditor } from '@/components/tex-editor';
 import { defaultJsonLdConfig } from '@/config';
 import { examples, getExample, type ExampleMeta } from '@/data/examples';
 import { routes } from '@/routes';
@@ -57,12 +58,13 @@ export default function ExamplePage({ example, source }: ExamplePageProps) {
 			<h2 className='mt-12 text-2xl'>Source</h2>
 			<div className='mt-4'>
 				{isEditing ? (
-					<textarea
-						className='h-96 w-full rounded-md border border-neutral-300 bg-neutral-50 p-4 font-mono text-sm'
-						value={editedSource}
-						onChange={(event) => setEditedSource(event.target.value)}
-						spellCheck={false}
-					/>
+					<div className='h-96'>
+						<TexEditor
+							value={editedSource}
+							onChange={setEditedSource}
+							onSubmit={() => setRendered(editedSource)}
+						/>
+					</div>
 				) : (
 					<CodeBlock code={source.trim()} />
 				)}

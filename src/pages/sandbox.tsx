@@ -3,9 +3,11 @@ import path from 'path';
 import { useEffect, useState } from 'react';
 
 import type { GetStaticProps } from 'next';
+import Link from 'next/link';
 
 import { Head } from '@/components/common/head';
 import { Latex } from '@/components/latex';
+import { TexEditor } from '@/components/tex-editor';
 import { defaultJsonLdConfig } from '@/config';
 import { examples } from '@/data/examples';
 import { routes } from '@/routes';
@@ -21,10 +23,20 @@ interface SandboxPageProps {
 	exampleSources: SandboxExample[];
 }
 
+const placeholder = [
+	'\\begin{pspicture}(-2,-2)(2,2)',
+	'\\psframe(-2,-2)(2,2)',
+	'\\userline[linewidth=1.5 pt]{->}(0,0)(2,2)',
+	'\\end{pspicture}',
+].join('\n');
+
 export default function Sandbox({ exampleSources }: SandboxPageProps) {
 	const seo = getPageSeo(routes.sandbox);
 	const [tex, setTex] = useState('');
 	const [rendered, setRendered] = useState('');
+	const [editorOpen, setEditorOpen] = useState(true);
+
+	const render = () => setRendered(tex);
 
 	useEffect(() => {
 		const prefix = '#tex=';
@@ -58,12 +70,29 @@ export default function Sandbox({ exampleSources }: SandboxPageProps) {
 					.getConfig()}
 			/>
 
-			<h1 className='text-4xl'>LaTeX Sandbox</h1>
-			<p className='mt-4 max-w-2xl text-neutral-600'>
-				Type LaTeX + HTML in the box below and render it live. Powered by LaTeX2JS and MathJax.
+			<div className='flex flex-wrap items-center justify-between gap-3'>
+				<h1 className='text-2xl'>LaTeX Sandbox</h1>
+				<div className='flex items-center gap-3 text-sm'>
+					<button
+						className='rounded-md border border-neutral-300 px-3 py-1.5 hover:border-neutral-500'
+						onClick={() => setEditorOpen(!editorOpen)}
+					>
+						{editorOpen ? 'Hide editor' : 'Show editor'}
+					</button>
+					<button
+						className='rounded-md bg-neutral-900 px-3 py-1.5 text-white hover:bg-neutral-700'
+						onClick={render}
+					>
+						Render
+					</button>
+				</div>
+			</div>
+
+			<p className='mt-2 max-w-2xl text-sm text-neutral-600'>
+				Write LaTeX and PSTricks, then render it live. Powered by LaTeX2JS and MathJax.
 			</p>
 
-			<label className='mt-6 block text-sm font-medium' htmlFor='example'>
+			<label className='mt-4 block text-sm font-medium' htmlFor='example'>
 				Load an example
 			</label>
 			<select
@@ -82,26 +111,31 @@ export default function Sandbox({ exampleSources }: SandboxPageProps) {
 				))}
 			</select>
 
-			<textarea
-				className='mt-6 h-64 w-full rounded-md border border-neutral-300 bg-neutral-50 p-4 font-mono text-sm'
-				value={tex}
-				onChange={(event) => setTex(event.target.value)}
-				spellCheck={false}
-				placeholder={'\\begin{pspicture}(-2,-2)(2,2)\n\\psframe(-2,-2)(2,2)\n\\userline[linewidth=1.5 pt]{->}(0,0)(2,2)\n\\end{pspicture}'}
-			/>
-
-			<button
-				className='mt-4 rounded-md bg-neutral-900 px-4 py-2 text-sm text-white hover:bg-neutral-700'
-				onClick={() => setRendered(tex)}
-			>
-				Render
-			</button>
-
-			{rendered && (
-				<div className='mt-10'>
-					<Latex key={rendered} content={rendered} />
+			<div className='mt-4 grid min-h-0 flex-1 gap-4 lg:grid-cols-2'>
+				{editorOpen && (
+					<div className='min-h-[24rem] lg:min-h-0'>
+						<TexEditor value={tex} onChange={setTex} onSubmit={render} placeholder={placeholder} />
+					</div>
+				)}
+				<div
+					className={`min-h-0 overflow-auto rounded-md border border-neutral-200 p-6 ${
+						editorOpen ? '' : 'lg:col-span-2'
+					}`}
+				>
+					{rendered ? (
+						/* Remount on each render so LaTeX2JS reprocesses the new source. */
+						<Latex key={rendered} content={rendered} />
+					) : (
+						<p className='text-sm text-neutral-500'>
+							The render appears here — hit Render (or ⌘/Ctrl+Enter). Start from an{' '}
+							<Link href={routes.examples.index} className='underline'>
+								example
+							</Link>{' '}
+							if you'd like something to take apart.
+						</p>
+					)}
 				</div>
-			)}
+			</div>
 		</>
 	);
 }
