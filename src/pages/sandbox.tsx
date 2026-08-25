@@ -3,6 +3,7 @@ import path from 'path';
 import { useEffect, useState } from 'react';
 
 import type { GetStaticProps } from 'next';
+import Link from 'next/link';
 
 import { Head } from '@/components/common/head';
 import { Latex } from '@/components/latex';
@@ -88,7 +89,7 @@ export default function Sandbox({ exampleSources }: SandboxPageProps) {
 			</div>
 
 			<p className='mt-2 max-w-2xl text-sm text-neutral-600'>
-				Type LaTeX + HTML in the box below and render it live. Powered by LaTeX2JS and MathJax.
+				Write LaTeX and PSTricks, then render it live. Powered by LaTeX2JS and MathJax.
 			</p>
 
 			<label className='mt-4 block text-sm font-medium' htmlFor='example'>
@@ -126,16 +127,11 @@ export default function Sandbox({ exampleSources }: SandboxPageProps) {
 						<Latex key={rendered} content={rendered} />
 					) : (
 						<p className='text-sm text-neutral-500'>
-							Type LaTeX and PSTricks on the left, then hit Render (or ⌘/Ctrl+Enter). Equations are typeset
-							by{' '}
-							<a href={routes.external.mathjax} target='_blank' rel='noreferrer' className='underline'>
-								MathJax
-							</a>
-							; diagrams by{' '}
-							<a href={routes.external.docs} target='_blank' rel='noreferrer' className='underline'>
-								LaTeX2JS
-							</a>
-							.
+							The render appears here — hit Render (or ⌘/Ctrl+Enter). Start from an{' '}
+							<Link href={routes.examples.index} className='underline'>
+								example
+							</Link>{' '}
+							if you'd like something to take apart.
 						</p>
 					)}
 				</div>
