@@ -9,7 +9,7 @@ minimumReleaseAgeExclude:
   - '@latex2js/settings@4.2.0'
   - '@latex2js/utils@4.2.0'
   - latex2js@4.5.0
-  - latex2react@4.4.2
+  - latex2react@4.4.3
   - mathjaxjs-react@4.2.0
   - mathjaxjs@4.2.0
 overrides:
