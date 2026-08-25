@@ -28,11 +28,11 @@ importers:
         specifier: ^0.1.2
         version: 0.1.2
       latex2js:
-        specifier: 4.4.0
-        version: 4.4.0
+        specifier: 4.4.1
+        version: 4.4.1
       latex2react:
-        specifier: 4.4.0
-        version: 4.4.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 4.4.1
+        version: 4.4.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       next:
         specifier: 16.1.6
         version: 16.1.6(@babel/core@7.29.7(supports-color@8.1.1))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -1505,11 +1505,11 @@ packages:
     resolution: {integrity: sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==}
     engines: {node: '>=6'}
 
-  latex2js@4.4.0:
-    resolution: {integrity: sha512-YNDhNEDgtuqpS8t1JJdO25DQ6L1+RZNdKaI1EnAJXfyyVJUWB+AWT1MljRsSCNNCk9f9yKhSI2AdLfXbdSgi4g==}
+  latex2js@4.4.1:
+    resolution: {integrity: sha512-MmPCVO0JW60I/mRHTn/gVhTdUGZbVG920dRBNbcBxy8D93XQTTr0TRAlKvWrkiPoxHRd9i9jqj4mUWNKB+6+0Q==}
 
-  latex2react@4.4.0:
-    resolution: {integrity: sha512-ns1Gb4jAcEUlY3GxIoxVYaOr2i6vp3W2tnU+CEtrBTKJQHG0xCSG1co/cKsAVmbT29lw0jlpq55JZVO/NpS11g==}
+  latex2react@4.4.1:
+    resolution: {integrity: sha512-Sqd/KcdKaqIetqC+fd9HAaLF1x502lD2CZDKqq1ghX65sAhdq8W5VbA49Q1VRW5R/TYBF/wUexkWIXFuCmvUgQ==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -3722,18 +3722,18 @@ snapshots:
 
   kleur@3.0.3: {}
 
-  latex2js@4.4.0:
+  latex2js@4.4.1:
     dependencies:
       '@latex2js/pstricks': 4.2.0
       '@latex2js/settings': 4.2.0
       '@latex2js/utils': 4.2.0
 
-  latex2react@4.4.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
+  latex2react@4.4.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
     dependencies:
       '@latex2js/macros': 3.2.0
       '@latex2js/pstricks': 4.2.0
       '@latex2js/utils': 4.2.0
-      latex2js: 4.4.0
+      latex2js: 4.4.1
       mathjaxjs: 4.2.0
       mathjaxjs-react: 4.2.0(react@19.2.4)
       react: 19.2.4
