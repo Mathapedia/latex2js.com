@@ -3,12 +3,12 @@ import { useMemo } from 'react';
 import { StreamLanguage } from '@codemirror/language';
 import { lintGutter, linter, type Diagnostic } from '@codemirror/lint';
 import { stex } from '@codemirror/legacy-modes/mode/stex';
-import CodeMirror from '@uiw/react-codemirror';
+import CodeMirror, { EditorView } from '@uiw/react-codemirror';
 
 import type { TexEditorProps } from './tex-editor';
 
 /** TeX/LaTeX highlighting, via CodeMirror's stex stream mode. */
-const extensions = [StreamLanguage.define(stex), lintGutter()];
+const extensions = [StreamLanguage.define(stex), lintGutter(), EditorView.lineWrapping];
 
 export function TexEditorClient({ value, onChange, onSubmit, placeholder, diagnostics = [] }: TexEditorProps) {
 	const diagnosticExtension = useMemo(

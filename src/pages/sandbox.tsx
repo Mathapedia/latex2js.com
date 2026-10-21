@@ -71,15 +71,15 @@ export default function Sandbox({ exampleSources }: SandboxPageProps) {
 
 			<div className='flex flex-wrap items-center justify-between gap-3'>
 				<h1 className='text-2xl'>LaTeX Sandbox</h1>
-				<div className='flex items-center gap-3 text-sm'>
+				<div className='flex flex-wrap items-center gap-3 text-sm'>
 					<button
-						className='rounded-md border border-neutral-300 px-3 py-1.5 hover:border-neutral-500'
+						className='whitespace-nowrap rounded-md border border-neutral-300 px-3 py-1.5 hover:border-neutral-500'
 						onClick={() => setEditorOpen(!editorOpen)}
 					>
 						{editorOpen ? 'Hide editor' : 'Show editor'}
 					</button>
 					<button
-						className='rounded-md bg-neutral-900 px-3 py-1.5 text-white hover:bg-neutral-700'
+						className='whitespace-nowrap rounded-md bg-neutral-900 px-3 py-1.5 text-white hover:bg-neutral-700'
 						onClick={() => renderNow()}
 					>
 						Render
@@ -110,7 +110,7 @@ export default function Sandbox({ exampleSources }: SandboxPageProps) {
 				))}
 			</select>
 
-			<div className='mt-4 grid min-h-0 flex-1 gap-4 lg:grid-cols-2'>
+			<div className='mt-4 grid min-h-0 flex-1 grid-cols-1 gap-4 lg:grid-cols-2'>
 				{editorOpen && (
 					<div className='min-h-[24rem] lg:min-h-0'>
 						<TexEditor

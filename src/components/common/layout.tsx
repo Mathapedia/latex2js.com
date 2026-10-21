@@ -19,13 +19,19 @@ export function Layout({ children }: { children: ReactNode }) {
 	return (
 		<div className='flex min-h-screen flex-col'>
 			<header className='border-b border-neutral-200'>
-				<nav className='mx-auto flex max-w-4xl items-center justify-between px-4 py-4'>
+				<nav className='mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-4'>
 					<Link href={routes.home} className='font-serif text-xl'>
 						LaTeX2JS
 					</Link>
-					<div className='flex items-center gap-5 text-sm'>
+					<div className='flex flex-wrap items-center gap-x-4 gap-y-1 text-sm sm:gap-x-5'>
 						{navLinks.map((link) => (
-							<Link key={link.href} href={link.href} className='hover:underline'>
+							<Link
+								key={link.href}
+								href={link.href}
+								// The logo already links home; on a phone the extra link only
+								// pushes the rest of the nav onto another row.
+								className={`hover:underline ${link.href === routes.home ? 'hidden sm:inline' : ''}`}
+							>
 								{link.label}
 							</Link>
 						))}
