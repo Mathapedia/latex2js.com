@@ -22,7 +22,7 @@ export default [
 		],
 		jobTitle: 'Teaching Professor, UC Berkeley EECS',
 		description:
-			"Teaching Professor, UC Berkeley EECS, and co-advisor of Dan Lynch's Mathapedia master's project and Art of Digital Publishing thesis.",
+			"Teaching Professor, UC Berkeley EECS. Advisor of Dan Lynch's Mathapedia master's project and The Art of Digital Publishing thesis.",
 	},
 	{
 		'@type': 'Person',
@@ -32,6 +32,6 @@ export default [
 		sameAs: ['https://ptolemy.berkeley.edu/~eal/', 'https://en.wikipedia.org/wiki/Edward_A._Lee'],
 		jobTitle: 'Distinguished Professor Emeritus, UC Berkeley EECS',
 		description:
-			"Distinguished Professor Emeritus, UC Berkeley EECS, and co-advisor of Dan Lynch's Mathapedia master's project and Art of Digital Publishing thesis.",
+			"Distinguished Professor Emeritus, UC Berkeley EECS. Co-advisor of Dan Lynch's Mathapedia master's project and The Art of Digital Publishing thesis.",
 	},
 ];

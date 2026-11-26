@@ -1,6 +1,7 @@
 // ==== App routes ====
 export const routes = {
 	home: '/',
+	about: '/about',
 	sandbox: '/sandbox',
 	sandboxWithSource: (tex: string) => `/sandbox#tex=${encodeURIComponent(tex)}` as const,
 	examples: {
@@ -23,5 +24,6 @@ export const routes = {
 		edwardLee: 'https://ptolemy.berkeley.edu/~eal/',
 		babakAyazifar: 'https://www2.eecs.berkeley.edu/Faculty/Homepages/ayazifar.html',
 		mathjax: 'https://www.mathjax.org',
+		thesis: 'https://www2.eecs.berkeley.edu/Pubs/TechRpts/2012/EECS-2012-268.html',
 	},
 } as const;

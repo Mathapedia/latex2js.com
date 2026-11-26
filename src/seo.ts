@@ -35,6 +35,11 @@ export const pages: Record<string, PageSeo> = {
 		description:
 			'Author interactive math equations and diagrams online using LaTeX and PSTricks. LaTeX2JS renders pspicture environments, draggable vectors, sliders, and live plots directly in the browser.',
 	},
+	'/about': {
+		title: 'About - LaTeX2JS',
+		description:
+			"LaTeX2JS originated as Mathapedia, Dan Lynch's UC Berkeley EECS master's project co-advised by Prof. Babak Ayazifar and Prof. Edward A. Lee.",
+	},
 	'/examples': {
 		title: 'Examples - LaTeX2JS',
 		description:

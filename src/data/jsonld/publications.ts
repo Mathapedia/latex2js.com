@@ -6,7 +6,10 @@ export default [
 		description:
 			`Dan Lynch's UC Berkeley EECS master's thesis proposing a synthesis of TeX and HTML5 standards to support the future of digital publishing.`,
 		author: { '@id': 'person:danlynch' },
-		contributor: [{ '@id': 'person:edward-a-lee' }, { '@id': 'person:babak-ayazifar' }],
+		contributor: [
+			{ '@type': 'Role', roleName: 'Advisor', contributor: { '@id': 'person:babak-ayazifar' } },
+			{ '@type': 'Role', roleName: 'Co-advisor', contributor: { '@id': 'person:edward-a-lee' } },
+		],
 		datePublished: '2012-12-18',
 		identifier: 'UCB/EECS-2012-268',
 		publisher: 'EECS Department, University of California, Berkeley',
