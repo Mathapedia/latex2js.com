@@ -20,7 +20,18 @@ export default [
 			'https://www2.eecs.berkeley.edu/Faculty/Homepages/ayazifar.html',
 			'https://www2.eecs.berkeley.edu/Pubs/Theses/Faculty/ayazifar.html',
 		],
+		jobTitle: 'Teaching Professor, UC Berkeley EECS',
 		description:
-			'Lecturer in EECS at UC Berkeley and advisor to Dan Lynch on the Art of Digital Publishing thesis.',
+			"Teaching Professor, UC Berkeley EECS, and co-advisor of Dan Lynch's Mathapedia master's project and Art of Digital Publishing thesis.",
+	},
+	{
+		'@type': 'Person',
+		'@id': 'person:edward-a-lee',
+		name: 'Edward A. Lee',
+		url: 'https://ptolemy.berkeley.edu/~eal/',
+		sameAs: ['https://ptolemy.berkeley.edu/~eal/', 'https://en.wikipedia.org/wiki/Edward_A._Lee'],
+		jobTitle: 'Distinguished Professor Emeritus, UC Berkeley EECS',
+		description:
+			"Distinguished Professor Emeritus, UC Berkeley EECS, and co-advisor of Dan Lynch's Mathapedia master's project and Art of Digital Publishing thesis.",
 	},
 ];

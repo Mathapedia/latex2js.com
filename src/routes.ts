@@ -19,6 +19,9 @@ export const routes = {
 		npm: 'https://www.npmjs.com/package/latex2js',
 		docs: 'https://mathapedia.com/books/31/sections/176',
 		mathapedia: 'https://mathapedia.com',
+		mathapediaProject: 'https://wiki.eecs.berkeley.edu/ptexternal/Main/Mathapedia',
+		edwardLee: 'https://ptolemy.berkeley.edu/~eal/',
+		babakAyazifar: 'https://www2.eecs.berkeley.edu/Faculty/Homepages/ayazifar.html',
 		mathjax: 'https://www.mathjax.org',
 	},
 } as const;
