@@ -20,8 +20,8 @@ export const routes = {
 		docs: 'https://mathapedia.com/books/31/sections/176',
 		mathapedia: 'https://mathapedia.com',
 		mathapediaProject: 'https://wiki.eecs.berkeley.edu/ptexternal/Main/Mathapedia',
-		edwardLee: 'https://ptolemy.berkeley.edu/~eal/',
-		babakAyazifar: 'https://www2.eecs.berkeley.edu/Faculty/Homepages/ayazifar.html',
+		edwardLee: 'https://mathapedia.com/about#edward-a-lee',
+		babakAyazifar: 'https://mathapedia.com/about#babak-ayazifar',
 		mathjax: 'https://www.mathjax.org',
 	},
 } as const;
