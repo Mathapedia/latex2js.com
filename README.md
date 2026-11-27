@@ -12,7 +12,7 @@ Built with Next.js (static export) on the same architecture as [constructive.io]
 
 ## Credits
 
-LaTeX2JS is the frontend of [Mathapedia](https://mathapedia.com), the original project. Originated as a UC Berkeley EECS master's project co-advised by Prof. Babak Ayazifar and Prof. Edward A. Lee ([Mathapedia project page](https://wiki.eecs.berkeley.edu/ptexternal/Main/Mathapedia)). Math rendering powered by [MathJax](https://www.mathjax.org).
+LaTeX2JS is the frontend of [Mathapedia](https://mathapedia.com), the original project. Originated as a UC Berkeley EECS [master's project](https://wiki.eecs.berkeley.edu/ptexternal/Main/Mathapedia) co-advised by Prof. Babak Ayazifar and Prof. Edward A. Lee. Math rendering powered by [MathJax](https://www.mathjax.org).
 
 ## Develop
 
