@@ -2,13 +2,28 @@
 
 exports[`JSON-LD Graph Validation Graph Integrity should have consistent entity count 1`] = `
 {
-  "totalEntities": 25,
+  "totalEntities": 26,
 }
 `;
 
 exports[`JSON-LD Graph Validation findMissingReferences should find missing references in the graph 1`] = `[]`;
 
-exports[`JSON-LD Graph Validation findNestedEntities should find nested entities in the graph 1`] = `[]`;
+exports[`JSON-LD Graph Validation findNestedEntities should find nested entities in the graph 1`] = `
+[
+  {
+    "hasId": false,
+    "parentId": "thesis:danlynch-digital-publishing",
+    "property": "contributor[0]",
+    "type": "Role",
+  },
+  {
+    "hasId": false,
+    "parentId": "thesis:danlynch-digital-publishing",
+    "property": "contributor[1]",
+    "type": "Role",
+  },
+]
+`;
 
 exports[`JSON-LD Graph Validation findOrphans should find orphaned entities in the graph 1`] = `
 [

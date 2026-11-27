@@ -64,6 +64,20 @@ export function Layout({ children }: { children: ReactNode }) {
 						</a>
 					</p>
 					<p>
+						A UC Berkeley EECS{' '}
+						<a href={routes.external.mathapediaProject} target='_blank' rel='noreferrer' className='underline'>
+							master&apos;s project
+						</a>
+						, co-advised by{' '}
+						<a href={routes.external.babakAyazifar} target='_blank' rel='noreferrer' className='underline'>
+							Prof. Babak Ayazifar
+						</a>{' '}
+						and{' '}
+						<a href={routes.external.edwardLee} target='_blank' rel='noreferrer' className='underline'>
+							Prof. Edward A. Lee
+						</a>
+					</p>
+					<p>
 						<a href='https://danlynch.com' target='_blank' rel='noreferrer' className='underline'>
 							Dan Lynch
 						</a>{' '}

@@ -10,6 +10,10 @@ Built with Next.js (static export) on the same architecture as [constructive.io]
 - **llms.txt + markdown twins** — `scripts/generate-llm-markdown.ts` emits `out/llms.txt` and a `.md` twin for every example and installation page.
 - **Content as data** — the interactive PSTricks examples live as `.tex` files in `content/examples/`, registered in `src/data/examples.ts`, and rendered client-side by [`@latex2js/react`](https://www.npmjs.com/package/@latex2js/react).
 
+## Credits
+
+LaTeX2JS is the frontend of [Mathapedia](https://mathapedia.com), the original project. Originated as a UC Berkeley EECS master's project co-advised by [Prof. Babak Ayazifar](https://mathapedia.com/about#babak-ayazifar) and [Prof. Edward A. Lee](https://mathapedia.com/about#edward-a-lee). Math rendering powered by [MathJax](https://www.mathjax.org).
+
 ## Develop
 
 ```bash
