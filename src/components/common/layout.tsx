@@ -9,7 +9,6 @@ const navLinks = [
 	{ label: 'Sandbox', href: routes.sandbox },
 	{ label: 'Examples', href: routes.examples.index },
 	{ label: 'Installation', href: routes.installation.index },
-	{ label: 'About', href: routes.about },
 ];
 
 export function Layout({ children }: { children: ReactNode }) {
@@ -62,6 +61,20 @@ export function Layout({ children }: { children: ReactNode }) {
 						Originated from{' '}
 						<a href={routes.external.mathapedia} target='_blank' rel='noreferrer' className='underline'>
 							Mathapedia
+						</a>
+					</p>
+					<p>
+						A UC Berkeley EECS{' '}
+						<a href={routes.external.mathapediaProject} target='_blank' rel='noreferrer' className='underline'>
+							master&apos;s project
+						</a>
+						, co-advised by{' '}
+						<a href={routes.external.babakAyazifar} target='_blank' rel='noreferrer' className='underline'>
+							Prof. Babak Ayazifar
+						</a>{' '}
+						and{' '}
+						<a href={routes.external.edwardLee} target='_blank' rel='noreferrer' className='underline'>
+							Prof. Edward A. Lee
 						</a>
 					</p>
 					<p>

@@ -33,10 +33,6 @@ LaTeX2JS renders LaTeX and PSTricks in the browser: pspicture environments, drag
 
 - [LaTeX Sandbox](${canonical}/sandbox): Edit and render LaTeX and PSTricks in the browser, or start from one of the interactive examples.
 
-## About
-
-- [About](${canonical}/about): ${pages['/about'].description}
-
 ## Installation
 
 ${installGuides
